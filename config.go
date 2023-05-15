@@ -168,7 +168,7 @@ func (c *Config) AccessToken(requestToken, requestSecret, verifier string) (acce
 	}
 
 	// ParseQuery to decode URL-encoded application/x-www-form-urlencoded body
-	values, err := url.ParseQuery(string(body))
+	values, err = url.ParseQuery(string(body))
 	if err != nil {
 		return "", "", url.Values{}, err
 	}

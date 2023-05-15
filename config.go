@@ -177,7 +177,7 @@ func (c *Config) AccessToken(requestToken, requestSecret, verifier string) (acce
 	if accessToken == "" || accessSecret == "" {
 		return "", "", url.Values{}, errors.New("oauth1: Response missing oauth_token or oauth_token_secret")
 	}
-	return accessToken, accessSecret, url.Values{}, nil
+	return accessToken, accessSecret, values, nil
 }
 
 func (c *Config) httpClient() *http.Client {
